@@ -6,7 +6,7 @@ function RecipesRoutes(props) {
     const rou=props.Recipes.map(
         (recipe) => { 
          
-return( <Route key={recipe.id.toString()} path={"/" +recipe.product} element={<RecipePage time={recipe.cookingtime} name={recipe.product} id={recipe.id} />} />)
+return( <Route key={recipe.id.toString()} path={"/AirFryer/" +recipe.product} element={<RecipePage time={recipe.cookingtime} name={recipe.product} id={recipe.id} />} />)
 })
 //console.log(rou)
 

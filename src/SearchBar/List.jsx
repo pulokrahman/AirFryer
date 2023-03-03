@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
+import './list.css';
 function List(props) {
     const [GoToLink, changeLink] = useState(false)
     const [Recipe,changeRecipe]=useState("")
@@ -18,12 +19,12 @@ if (GoToLink==true) {
        
  
 
-        return (<li key={recipe.id.toString()}>
-           <Link to={"/"+ recipe.product} onClick={()=>{changeRecipe(recipe.product); changeLink(true)}}> {recipe.product}   <img src={recipe.imageurl} width={50} height={50} /> </Link>
+        return (<li className="list-group-item list-group-item2  list-group-item-action" key={recipe.id.toString()}>
+           <Link to={"/AirFryer/"+ recipe.product} onClick={()=>{changeRecipe(recipe.product); changeLink(true)}}> {recipe.product}   <img src={recipe.imageurl} width={50} height={50} /> </Link>
         </li> )
     }    )
-    
-    return (<ul style={{ listStyleType: "none" }}>
+  
+    return (<ul className="list-group" >
        {listItems}
 
 </ul>
